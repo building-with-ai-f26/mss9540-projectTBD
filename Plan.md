@@ -1,38 +1,35 @@
-# Plan.md — Optional Risk, Architecture & Budget Draft (Build 2)
+# ResumeIQ — Plan
 
-Use this as a scratchpad if helpful. Publish PRD v2 and the Build 2 log on `docs/index.html`; this file is not a separate hand-in.
+Build 1 scope approved: local paste-and-review app, server-side OpenRouter first, explicit non-AI fallback, PRD, real screenshot, honest log, and documentation. No commit or push before review.
 
-**Due:** Monday, Nov 16, 2026 at 12:00 PM (Noon)  
-**Builder:** [Your Name]
+## Architecture
 
----
+- `server.py`: Python 3.8+ HTTP server; loads environment, serves explicit UI routes, validates input, calls OpenRouter, validates result shape. Binds to 127.0.0.1 only.
+- `app/`: plain HTML/CSS/JavaScript. Output uses textContent.
+- `docs/`: static Product Page and actual screenshot for GitHub Pages.
+- One PDF library (pypdf); standard-library DOCX parsing; no database, login, saved resume history, or Build 1 analytics.
+- Default model: `openai/gpt-4o-mini`, overridable with `OPENROUTER_MODEL`. Live availability and quality remain unverified.
 
-## 1. What is the riskiest part?
-*What is the single most likely reason this product fails to work for a real user (e.g., model hallucination on messy PDFs, latency, auth, bad data, third-party API limits)? How does your smallest local version test that risk first?*
+## Risk and verification
 
-- **#1 Technical / Product Risk:** 
-- **How Build 2 tests it right now:** 
+Main risk: misleading or invented advice. The prompt asks for grounded evidence and forbids invented metrics. Schema checks verify structure and exactly three improvements, not factual correctness.
 
-## 2. The Smallest Working Version (Architecture)
-*Use AI to understand the main components, data flow, and risks, then explain them in your own words.*
+Completed: five deterministic tests, JavaScript syntax, actual browser non-AI workflow, private-file/invalid-input HTTP checks, mobile width check, screenshot inspection.
 
-- **Stack (Frontend / Backend / DB):** 
-- **Local run command:** 
-- **Local URL (Build 2):** 
-- **Models used (via OpenRouter or provider):** 
+Pending: valid key and live AI review; builder demo; reachable PM recruiting student; public Pages deployment. Build 4 track undecided: choose Track A domain evals or Track B user replays using `tests/README.md` later.
 
-## 3. Time & Money Budget
-*Estimate what it will cost to build and what it costs each time a user runs a job.*
+## Costs and time
 
-| Item | Estimate | Notes |
-| :--- | :--- | :--- |
-| **Build budget (coding agent / OpenRouter)** | `$` | |
-| **Unit cost per user action (inference/API)** | `$ / run` | |
-| **Hosting cost (monthly)** | `$ / mo` | |
-| **Your engineering time budget** | `hrs/wk` | |
+No live inference requests made during implementation. Agent spending, cumulative costs, and builder hours are unknown. No totals or per-run prices inferred. Record actual provider billing after a live run and personal hours on the Product Page.
 
-## 4. Security & Recovery Checklist
-- [ ] `.env` and API keys are excluded via `.gitignore`
-- [ ] Spending limits or alerts are configured where the provider supports them
-- [ ] Least-privilege permissions on any external data/APIs
-- [ ] Git save point for undoing a broken local change; add a cloud rollback path in Build 5
+## Next steps
+
+1. Privately configure `.env`, restart, and review a fictional sample in AI mode.
+2. Check grounded strengths, relevant gaps, and three truthful actionable edits.
+3. Record actual hours, expenses, personal learning, and feedback only after collecting it.
+4. Review changes, then separately authorize commit/push. Publish Pages from `main` → `/docs`.
+5. Build 2: test output quality and plan analytics. Never include resume content in analytics.
+
+## Approved upload extension
+
+PDF and .docx upload → `/api/extract` → editable resume text → existing analysis workflow. Files stay in memory. Limits: 5 MB, 20 PDF pages, 20,000 extracted characters. Errors preserve existing text. No OCR or legacy .doc support. Use a virtual environment and `requirements.txt`; see README. Ten tests passed, including PDF/DOCX extraction and upload-to-analysis HTTP checks. Complex document reading order and real-user documents still need manual review.

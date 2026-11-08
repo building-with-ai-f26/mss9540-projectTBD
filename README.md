@@ -6,7 +6,7 @@ ResumeIQ is here to ensure your resume accurately reflects your experience for e
 
 Build 1 due November 9, 2026 at noon, New York time. [PRD and build log](docs/index.html).
 
-**Repository status:** This update publishes only the README. The prototype, revised Product Page, screenshot, and other project updates remain local and are not included in this publication. The instructions below describe that local implementation; a fresh clone cannot run it until those files are published.
+**Repository status:** The prototype, Product Page, screenshot, and project documents are included in the local implementation commit. GitHub publication requires pushing that commit. The private `.env` and virtual environment are excluded.
 
 ## Run locally
 
@@ -82,7 +82,7 @@ Live AI response/quality, target-user usefulness, assistive technology, and publ
 
 ## Publish after review
 
-Only this README is authorized for publication. Review the remaining local changes and add actual personal hours, costs, and learning to the Product Page before publishing the prototype or page. When ready, stage only reviewed files, confirm `.env` is ignored (`git check-ignore .env`) and absent from staged changes, then commit and push approved changes to `main`.
+The builder authorized committing the project files locally. Add actual personal hours, costs, and learning to the Product Page before submission. Pushing the implementation to GitHub remains a separate step. When ready, stage only reviewed files, confirm `.env` is ignored (`git check-ignore .env`) and absent from staged changes, then commit and push approved changes to `main`.
 
 On GitHub:
 

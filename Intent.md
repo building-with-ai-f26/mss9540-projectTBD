@@ -1,36 +1,23 @@
-# Intent.md — Optional PRD Draft (Build 1)
+# ResumeIQ — Build 1 Intent
 
-Use this as a scratchpad if helpful. Publish the required PRD and Build 1 log on `docs/index.html`; this file is not a separate hand-in.
+Due November 9, 2026 at noon, New York time. Required PRD and log: [Product Page](docs/index.html).
 
-**Build 1 due:** Monday, Nov 9, 2026 at noon, New York time  
-**Builder:** [Your Name]
+Primary user: an NYU Stern MBA student recruiting for product management. Planned outreach is a classmate through the builder’s school network. No participant or feedback is confirmed.
 
----
+Before: manually compare resume and posting and guess what to emphasize. This is a product hypothesis, not validated research.
 
-## 1. Who is it for?
-*Name a specific person or role you have direct access to (not a broad demographic). Who will actually test and use this before Demo Day?*
+After: upload a PDF/.docx resume or paste text, paste a job description, review strengths and missing evidence, then make three truthful edits.
 
-- **Target user:** 
-- **How I will reach them to test it:** 
+One core workflow: resume + specific job description → analysis → three improvements.
 
-## 2. What job does it do?
-*Describe the concrete recurring problem from work, school, or life, and what "done" looks like for the user.*
+Build 1 non-goals:
 
-- **Current painful workflow (before):** 
-- **New workflow with this product (after):** 
-- **Why this is useful** *(used weekly / saves real time / worth paying for)*: 
+1. Job-title-only analysis (possible later feature).
+2. Resume formatting, template design, and exports.
+3. Job searching, application submission, and ATS integrations.
 
-## 3. What is in and out of scope?
+Prototype: `.venv/bin/python server.py` → `http://127.0.0.1:8000`. Real screenshot: `docs/assets/prototype.png`.
 
-- **One core workflow:**
-*You have six weeks. List the features, integrations, and polish you are deliberately NOT building.*
+Verified: non-AI workflow with fictional inputs, three suggestions, mobile width, validation/private-file routes, and five deterministic tests. Server-side OpenRouter is implemented but live inference is unverified because the existing key is a placeholder. Keyword comparison cannot assess qualifications or quality. No user outcomes are claimed.
 
-- [ ] Not building: 
-- [ ] Not building: 
-- [ ] Not building: 
-
-## 4. Rough Local Prototype
-*What did you spike this week to test the core idea, and what did you learn from throwing it at the problem?*
-
-- **Local run command / branch / screenshot:** 
-- **What worked vs. what surprised me:**
+Scope update approved by builder: PDF and Word .docx uploads now extract text locally into the editable resume field. Scanned PDFs and legacy .doc files remain unsupported. Ten automated tests pass, including extraction and HTTP upload-to-review checks with generated fictional documents.

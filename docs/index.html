@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>[Your Product Name] · Building with AI (Fall 2026)</title>
+  <title>Apply Easier. · ResumeIQ</title>
 
   <!-- Week 1: create your PostHog account only.
        Build 2: paste your project's current PostHog web snippet here,
@@ -11,14 +11,14 @@
 
   <style>
     :root {
-      --bg: #fafafa;
+      --bg: #f8f5fc;
       --card: #ffffff;
       --text: #111827;
       --muted: #4b5563;
-      --border: #e5e7eb;
-      --accent: #1d63dc;
-      --tag-bg: #eff6ff;
-      --tag-text: #1e40af;
+      --border: #e5dcef;
+      --accent: #57068c;
+      --tag-bg: #efe5f7;
+      --tag-text: #57068c;
     }
     * { box-sizing: border-box; }
     body {
@@ -51,6 +51,7 @@
       margin-bottom: 12px;
     }
     h1 {
+      color: var(--accent);
       font-size: 36px;
       line-height: 1.15;
       margin: 0 0 12px;
@@ -140,126 +141,53 @@
   </style>
 </head>
 <body>
-  <div class="container">
-    <!-- HERO / PRODUCT PITCH -->
+  <main class="container">
     <header>
-      <span class="eyebrow">NYU Stern · Building with AI · Fall 2026</span>
-      <h1>[Your Product Name]</h1>
-      <p class="tagline">[One clear sentence: Who is this for, and what painful job does it do for them?]</p>
-      <div class="cta-row">
-        <a class="btn" href="#live-demo" onclick="window.posthog && posthog.capture('clicked_try_product')">See the Product →</a>
-        <a class="btn btn-secondary" href="#prd">Read the Living PRD</a>
-        <a class="btn btn-secondary" href="#build-log">Weekly Build Log</a>
-      </div>
+      <span class="eyebrow">NYU Stern · Software Engineering with AI · Build 1</span>
+      <h1>Apply Easier.</h1>
+      <p class="tagline">Optimize your experience for every role without the hassle.</p>
+      <p>ResumeIQ is here to ensure your resume accurately reflects your experience for every job.</p>
+      <div class="cta-row"><a class="btn" href="#live-demo">See the prototype</a><a class="btn btn-secondary" href="#prd">Read PRD v1</a><a class="btn btn-secondary" href="#build-log">Build log</a></div>
     </header>
-
-    <!-- DEMO / SCREENSHOT / VIDEO SHOWCASE -->
     <section id="live-demo">
-      <h2>Product Showcase (Prototype / Live App / 2-Min Video)</h2>
-      <p>
-        <strong>Current Status:</strong> [Build 1: local prototype / Builds 2–4: local app / Build 5: cloud app]<br />
-        <strong>Demo:</strong> [Add a screenshot or GIF now; add the live cloud app URL in Build 5.]
-      </p>
-      <p class="meta">
-        Ask your coding agent to embed a screenshot or GIF of your local prototype for Build 1. Keep this evidence current, then add your cloud app link and two-minute video in Build 5.
-      </p>
+      <h2>Local prototype</h2>
+      <p><strong>Status:</strong> Local non-AI workflow verified. Server-side OpenRouter integration implemented and tested with simulated responses; live AI review awaits a valid API key. This public page is a showcase, not the running app.</p>
+      <figure style="margin:20px 0"><a href="assets/prototype.png"><img src="assets/prototype.png" width="1440" height="1400" style="width:100%;height:auto;border:1px solid #d7ded5;border-radius:8px" alt="Actual ResumeIQ prototype showing fictional resume and job description inputs, non-AI keyword matches, missing keywords, and three generic suggestions."></a><figcaption class="meta">Earlier local browser screenshot, November 8, 2026, before document uploads were added. Fictional example in explicitly selected Non-AI keyword comparison mode. No AI output or real user data is shown.</figcaption></figure>
+      <p>Install dependencies using the setup instructions, run <code>.venv/bin/python server.py</code> in the repository, then open <code>http://127.0.0.1:8000</code>. <a href="https://github.com/building-with-ai-f26/mss9540-projectTBD#readme">Setup and demo instructions</a>.</p>
     </section>
-
-    <!-- LIVING PRD (Updated every week!) -->
     <section id="prd">
-      <h2>Living PRD (Product Requirements Document)</h2>
-      <p class="meta">Updated every week as we test with real users and learn what works.</p>
-
-      <h3>1. Target User & The Job to Be Done</h3>
-      <p><strong>Who is this for?</strong> [Name a specific, reachable person or role you have direct access to.]</p>
-      <p><strong>The painful "Before" workflow:</strong> [How do they do this today, and why is it slow, manual, or broken?]</p>
-      <p><strong>The "After" workflow with this product:</strong> [What does your tool do for them in one sitting?]</p>
-
-      <h3>2. Scope & Explicit Non-Goals</h3>
-      <ul>
-        <li><strong>In Scope (Core Workflow):</strong> [The 1 main workflow this product does reliably]</li>
-        <li><strong>Out of Scope #1:</strong> [Feature you are deliberately NOT building in 6 weeks]</li>
-        <li><strong>Out of Scope #2:</strong> [Feature you are deliberately NOT building in 6 weeks]</li>
-        <li><strong>Out of Scope #3:</strong> [Feature you are deliberately NOT building in 6 weeks]</li>
-      </ul>
-
-      <h3>3. How It Works Under the Hood & Riskiest Assumption (Week 2+)</h3>
-      <p><strong>Riskiest Assumption:</strong> [What is the #1 technical or user risk that could sink this product?]</p>
-      <p><strong>Simple Architecture:</strong> [User Input] → [Your App / Server] → [AI Model / Tool] → [Output]</p>
-
-      <h3>4. Unit Economics & Analytics Snapshot (Updated Weekly)</h3>
-      <div class="grid-2">
-        <div class="stat-box">
-          <div class="stat-label">Cumulative Build Spend</div>
-          <div class="stat-value">[Record actual spend]</div>
-        </div>
-        <div class="stat-box">
-          <div class="stat-label">Est. Cost Per User Run</div>
-          <div class="stat-value">[Not yet estimated]</div>
-        </div>
-        <div class="stat-box">
-          <div class="stat-label">User Evidence (Analytics from Build 2)</div>
-          <div class="stat-value">[Not yet measured]</div>
-        </div>
-        <div class="stat-box">
-          <div class="stat-label">Sponsor Call (Week 6)</div>
-          <div class="stat-value">TBD</div>
-        </div>
-      </div>
+      <h2>PRD v1 · November 8, 2026</h2>
+      <h3>Primary user and reach</h3>
+      <p>An NYU Stern MBA student recruiting for product management positions who has a resume and a specific job posting. Planned outreach: invite a Stern MBA classmate directly through the builder’s school network to try one application. No participant has been confirmed and no user feedback has been collected.</p>
+      <h3>The job to be done</h3>
+      <p><strong>Before:</strong> The student manually compares a job posting with their resume, guesses which experiences matter, and rewrites bullets without a clear priority. This is the initial problem hypothesis, not a measured research finding.</p>
+      <p><strong>After:</strong> In one sitting, paste both texts, request a review, read strengths and missing evidence, and use three suggested improvements to make truthful edits. The student reviews and edits their own resume.</p>
+      <h3>One core workflow</h3>
+      <p>Upload a PDF/Word .docx resume or paste text → paste a specific job description → analyze → review strengths, missing evidence, and exactly three suggested improvements.</p>
+      <p>AI is the intended review mode. The local fallback reports literal keyword overlap and generic editing prompts; it cannot evaluate qualifications, synonyms, or resume quality. Missing evidence never establishes that a candidate lacks a skill.</p>
+      <h3>Three non-goals for Build 1</h3>
+      <ul><li>General job-title analysis without a specific job description: a possible later feature.</li><li>Resume template design, formatting, or export.</li><li>Job searching, application submission, or applicant tracking integrations.</li></ul>
+      <h3>Simple architecture and main risk</h3>
+      <p>Resume upload or pasted text → local Python server → OpenRouter/model provider → validated result → browser. The key stays on the server. No database or saved resume history. In non-AI mode, the Python server performs a local keyword comparison without sending documents to an external service.</p>
+      <p><strong>Main risk:</strong> A model may misread evidence or suggest unsupported claims. The prompt requests grounded observations and truthful edits; the server checks output shape and exactly three improvements. These checks do not establish analysis quality. Live model testing and a target-user review remain necessary.</p>
+      <p><strong>Privacy:</strong> AI mode sends both input texts to OpenRouter and its provider; their retention policies apply. Remove personal details. This app does not persist inputs or log request contents. Browser form state remains until cleared or closed.</p>
     </section>
-
-    <!-- WEEKLY BUILD LOG (Updated at least twice a week via Git commits) -->
     <section id="build-log">
-      <h2>Weekly Build Log</h2>
-      <p class="meta">Build on at least two separate days each week outside class, including the November 3 break. Push commits and log actual progress, failures, PRD changes, costs, and hours here. All build deadlines are noon, New York time.</p>
-
-      <div class="log-entry">
-        <h3>Build 1 · Intent.md & Throwaway Prototype (Due Nov 9)</h3>
-        <ul>
-          <li><strong>What shipped:</strong> [What you actually built; link your local prototype screenshot or GIF above.]</li>
-          <li><strong>Things learned with AI:</strong> [What you learned from AI practice and Terminus Episodes 1 and 2.]</li>
-          <li><strong>What broke / changed in PRD:</strong> [Fill in]</li>
-          <li><strong>Cost & time this week:</strong> $[0.00] · [0] hours</li>
-        </ul>
-      </div>
-
-      <div class="log-entry">
-        <h3>Build 2 · Smallest Local Version & PostHog (Due Nov 16)</h3>
-        <ul>
-          <li><strong>What shipped:</strong> [Local working slice, PostHog verified on this page and the local app, PRD v2, and local setup in AGENTS.md]</li>
-          <li><strong>What broke / changed in PRD:</strong> [Fill in]</li>
-          <li><strong>Cost & time this week:</strong> $[0.00] · [0] hours</li>
-        </ul>
-      </div>
-
-      <div class="log-entry">
-        <h3>Build 3 · Build.exe: The Core Workflow (Due Nov 23)</h3>
-        <ul>
-          <li><strong>What shipped:</strong> [End-to-end workflow working with real inputs + PostHog funnel events]</li>
-          <li><strong>What broke / changed in PRD:</strong> [Fill in]</li>
-          <li><strong>Cost & time this week:</strong> $[0.00] · [0] hours</li>
-        </ul>
-      </div>
-
-      <div class="log-entry">
-        <h3>Build 4 · Test.py: Choose Track A or Track B (Due Nov 30)</h3>
-        <ul>
-          <li><strong>Chosen track:</strong> [A: 10-case domain eval and one outside target-user review; OR B: 3–5 outside users and replay findings]</li>
-          <li><strong>Results and improvements:</strong> [Before/after evidence; for Track B, fixes to the top three friction points]</li>
-          <li><strong>PRD v4 changes:</strong> [What the evidence changed]</li>
-          <li><strong>Cost & time this week:</strong> $[0.00] · [0] hours</li>
-        </ul>
-      </div>
-
-      <div class="log-entry">
-        <h3>Build 5 · Ship.installer: Launch Ops, Rollback Check & 2-Min Video (Due Dec 7)</h3>
-        <ul>
-          <li><strong>Launch Ops & Safety:</strong> [Verified no exposed keys, set spend cap, tested 2-minute rollback]</li>
-          <li><strong>2-Minute Video & Final Polish:</strong> [Link/embed above]</li>
-          <li><strong>Cost & time this week:</strong> $[0.00] · [0] hours</li>
-        </ul>
-      </div>
+      <h2>Build 1 log · November 8, 2026</h2>
+      <p class="meta">Due November 9 at noon, New York time. Implementation prepared locally for builder review; no commit, push, or Pages deployment performed in this session.</p>
+      <ul>
+        <li><strong>What works:</strong> A local two-input form, fictional sample, explicit AI/non-AI mode selector, three result sections, validation, and user-visible errors. The non-AI workflow ran successfully in headless Chrome. OpenRouter requests run server-side.</li>
+        <li><strong>What was learned during implementation:</strong> The repository was a documentation template with no app. Python’s standard library was enough for the server. Model JSON still needs application validation; keyword overlap cannot establish candidate qualifications.</li>
+        <li><strong>What broke or changed:</strong> The existing .env contained a placeholder key, so live AI could not be verified. An explicit non-AI mode supports the local demo. The coding sandbox initially blocked the localhost server; it ran after execution permission was granted. After a session interruption, a duplicate start found the original server still running; browser checks used that existing server.</li>
+        <li><strong>Checks:</strong> Five automated tests passed: whole-word keyword behavior and three suggestions, placeholder rejection, simulated provider success, sanitized provider failure, and invalid output rejection. JavaScript syntax passed. Browser checks verified the sample result and three suggestions, a 390px layout without horizontal overflow, 400 for invalid input, and 404 for private-file routes.</li>
+        <li><strong>Still unverified:</strong> A live OpenRouter response, semantic review quality, real-user usefulness, accessibility with assistive technology, and public Pages deployment. No user feedback, learning-exercise completion, or time savings are claimed.</li>
+        <li><strong>Costs:</strong> No live inference requests were made in this session. Agent/account spending and cumulative project costs have not been supplied or verified; builder to record actual amounts. Non-AI runs make no paid API calls.</li>
+        <li><strong>Upload scope update:</strong> Added PDF and Word .docx uploads alongside pasted text. Extraction runs locally in memory and fills an editable preview. Ten automated tests passed, including generated document extraction and HTTP upload-to-non-AI-analysis for both formats. Scanned/encrypted PDFs and older .doc files are unsupported. PDF extraction requires the dependency setup linked above. Costs and builder hours for this update have not been recorded.</li>
+        <li><strong>Hours:</strong> Builder hours not yet recorded. Builder to add actual time before submission.</li>
+      </ul>
+      <p><strong>Next:</strong> Configure and test a valid key, personally review a sample output, invite a Stern MBA PM candidate, record actual costs and hours, then publish this page. Build 2 planning will address output quality and analytics. Build 4 evaluation track remains undecided.</p>
     </section>
-  </div>
+    <footer class="meta">ResumeIQ · Built for NYU Stern · <a href="https://github.com/building-with-ai-f26/mss9540-projectTBD">Repository</a></footer>
+  </main>
 </body>
 </html>

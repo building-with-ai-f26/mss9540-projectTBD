@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Apply Easier. · ResumeIQ</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <nav class="topbar" aria-label="Brand"><a class="brand" href="/" aria-label="ResumeIQ home"><span class="brand-mark" aria-hidden="true">R<span>✦</span></span>Resume<span class="brand-iq">IQ</span></a><span class="badge"><span class="status-dot" aria-hidden="true"></span>Local prototype</span></nav>
+  <main>
+    <header class="hero">
+      <span class="eyebrow"><span aria-hidden="true">✦</span> YOUR NEXT CHAPTER STARTS HERE</span>
+      <h1>Apply <em>Easier.</em></h1>
+      <p class="intro">Optimize your experience for every role without the hassle.</p>
+      <p class="hero-description">ResumeIQ is here to ensure your resume accurately reflects your experience for every job.</p>
+      <div class="journey" aria-label="How it works"><span><b>1</b>Add your resume</span><span class="journey-line" aria-hidden="true"></span><span><b>2</b>Choose your role</span><span class="journey-line" aria-hidden="true"></span><span><b>3</b>Find your next move</span></div>
+    </header>
+    <form id="review-form">
+      <div class="workspace-heading"><div><span class="eyebrow">THE WORKSPACE</span><h2>Make your experience count.</h2></div><button id="sample" type="button" class="secondary"><span aria-hidden="true">↗</span> Load fictional example</button></div>
+      <div class="inputs">
+        <section class="input-card" aria-labelledby="resume-heading">
+          <div class="card-heading"><span class="step-number">01</span><div><h3 id="resume-heading">Your experience</h3><p>Start with the story you already have.</p></div><span class="card-symbol" aria-hidden="true">↥</span></div>
+          <div class="upload-zone"><span class="upload-icon" aria-hidden="true">↥</span><label for="resume-file">Upload your resume</label><p>PDF or Word .docx · up to 5 MB</p><input id="resume-file" type="file" accept=".pdf,.docx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document" aria-describedby="upload-help upload-status"></div>
+          <p id="upload-help" class="note">PDFs up to 20 pages. Scanned PDFs and older .doc files are not supported.</p><p id="upload-status" role="status" aria-live="polite"></p>
+          <div class="field-heading"><label for="resume">Or paste your resume</label><span>Editable preview</span></div>
+          <textarea id="resume" required minlength="30" maxlength="20000" placeholder="Your experience goes here… Upload a document or paste your resume text."></textarea>
+          <p class="field-hint">Uploaded text appears here. Review it before analyzing.</p>
+        </section>
+        <section class="input-card" aria-labelledby="job-heading">
+          <div class="card-heading"><span class="step-number">02</span><div><h3 id="job-heading">Your next opportunity</h3><p>Give your experience a direction.</p></div><span class="card-symbol" aria-hidden="true">↗</span></div>
+          <label for="job">The job description</label>
+          <textarea id="job" required minlength="30" maxlength="20000" placeholder="Paste the specific job description here, including responsibilities and qualifications…"></textarea>
+          <div class="tip"><span aria-hidden="true">✦</span><p><strong>A little context goes a long way.</strong><br>Use the full job description to connect your experience to the role.</p></div>
+        </section>
+      </div>
+      <div class="review-settings"><div class="toolbar"><label for="mode">Review mode</label><select id="mode"><option value="ai">AI analysis · OpenRouter</option><option value="local">Non-AI keyword comparison</option></select></div><p id="configuration" class="note">Checking AI configuration…</p></div>
+      <div class="action-bar"><p class="privacy-note"><span aria-hidden="true">◇</span><span>AI mode sends both texts to OpenRouter and its model provider. Remove personal details first. This app does not save your inputs. Non-AI mode stays on your computer.</span></p><button id="analyze" type="submit">Analyze my resume <span aria-hidden="true">↗</span></button></div>
+      <p id="status" role="status" aria-live="polite"></p>
+    </form>
+    <section id="results" hidden aria-labelledby="results-heading"><div class="result-heading"><span class="eyebrow">YOUR NEXT MOVES</span><h2 id="results-heading">Your application, in focus</h2><p id="result-label" class="note"></p></div><div class="results-grid"><article class="strength-card"><span class="result-icon" aria-hidden="true">✦</span><h3>Strengths</h3><ul id="strengths"></ul></article><article class="evidence-card"><span class="result-icon" aria-hidden="true">◎</span><h3>Missing evidence</h3><ul id="missing_evidence"></ul></article><article class="improvement-card"><span class="result-icon" aria-hidden="true">↗</span><h3>Three next moves</h3><ol id="improvements"></ol></article></div><p class="note results-note">Review every suggestion. Missing evidence is not missing ability. Only add claims you can support.</p></section>
+  </main>
+</body>
+</html>
