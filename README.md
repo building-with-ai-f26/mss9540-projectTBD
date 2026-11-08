@@ -76,7 +76,7 @@ The original five review tests and five new upload tests passed. Node is optiona
 
 After the redesign, headless Chrome verified the fictional-sample non-AI workflow and three suggestions, a 390px layout without horizontal overflow, 400 for invalid input, and 404 for private-file routes. A temporary desktop screenshot of the redesign was captured and visually inspected. JavaScript syntax and Git whitespace checks passed.
 
-`docs/assets/prototype.png` is an actual screenshot of the earlier interface, before document uploads and the visual redesign. Its Product Page caption identifies it as an earlier version; it has not been replaced with the redesign preview.
+`docs/assets/prototype.png` is a fresh browser capture of the purple redesign, including the PDF/Word upload area and result cards. It uses fictional sample inputs in explicitly selected non-AI mode. The screenshot was visually inspected and its Product Page caption identifies the mode.
 
 Live AI response/quality, target-user usefulness, assistive technology, and public deployment remain unverified. Build 4 evaluation track is undecided. See [Plan.md](Plan.md).
 
