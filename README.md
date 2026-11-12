@@ -6,7 +6,7 @@ ResumeIQ is here to ensure your resume accurately reflects your experience for e
 
 Build 1 due November 9, 2026 at noon, New York time. [PRD and build log](docs/index.html).
 
-**Repository status:** The prototype, Product Page, screenshot, and project documents are included in the local implementation commit. GitHub publication requires pushing that commit. The private `.env` and virtual environment are excluded.
+**Repository status:** The builder successfully generated a live AI review using the fictional example. The November 12 screenshot and documentation updates are prepared locally for review; they have not been committed or pushed. Public deployment remains unverified. The private `.env` and virtual environment are excluded.
 
 ## Run locally
 
@@ -34,7 +34,7 @@ The redesign changes presentation; the upload and analysis workflow is unchanged
 
 ### Enable AI
 
-The existing `.env` was a placeholder during implementation. Edit it privately in your editor. Do not paste credentials into chat, screenshots, browser code, or terminal output. If the file does not exist, copy `.env.example` to `.env`; never overwrite a real key with the example.
+The builder has configured OpenRouter and successfully generated a live review. For a new setup, edit `.env` privately in your editor. Do not paste credentials into chat, screenshots, browser code, or terminal output. If the file does not exist, copy `.env.example` to `.env`; never overwrite a real key with the example.
 
 Set `OPENROUTER_API_KEY` to your actual key. Optionally set `OPENROUTER_MODEL` (default `openai/gpt-4o-mini`). Restart the server. Exported shell variables take precedence over `.env`.
 
@@ -72,17 +72,21 @@ Upload verification: ten automated tests passed, including real generated PDF/DO
 node --check app/app.js
 ```
 
-The original five review tests and five new upload tests passed. Node is optional for the syntax check. Provider tests use simulated responses; these do not establish live AI quality.
+All ten existing tests passed again on November 12: five review tests and five upload tests. Node is optional for the syntax check. Provider tests use simulated responses; these do not establish live AI quality.
 
 After the redesign, headless Chrome verified the fictional-sample non-AI workflow and three suggestions, a 390px layout without horizontal overflow, 400 for invalid input, and 404 for private-file routes. A temporary desktop screenshot of the redesign was captured and visually inspected. JavaScript syntax and Git whitespace checks passed.
 
 `docs/assets/prototype.png` is a fresh browser capture of the purple redesign, including the PDF/Word upload area and result cards. It uses fictional sample inputs in explicitly selected non-AI mode. The screenshot was visually inspected and its Product Page caption identifies the mode.
 
-Live AI response/quality, target-user usefulness, assistive technology, and public deployment remain unverified. Build 4 evaluation track is undecided. See [Plan.md](Plan.md).
+On November 12, the builder supplied `docs/assets/ai-review.png`, a screenshot of a successful live OpenRouter response labeled `openai/gpt-4o-mini`, with strengths, missing evidence, and three next moves for the fictional example. This demonstrates connectivity, while systematic model quality, target-user usefulness, assistive technology, and public deployment remain unverified. Build 4 evaluation track is undecided. See [Plan.md](Plan.md).
+
+## Costs and time
+
+The builder estimates the coding-agent subscription at approximately $20/month, shared with other uses; ResumeIQ’s portion has not been measured. The builder reports purchasing $5 in prepaid OpenRouter credits. Estimated runtime API cost is $0.0003–$0.0007 per short fictional-example review using GPT-4o mini, excluding credit-purchase fees. This is an estimate, not a measured usage charge; actual usage charges and cumulative project costs remain unreported. Builder time is approximately 3 hours (previously reported estimate). See the [Product Page cost entry](docs/index.html#build-log) for pricing and billing links.
 
 ## Publish after review
 
-The builder authorized committing the project files locally. Add actual personal hours, costs, and learning to the Product Page before submission. Pushing the implementation to GitHub remains a separate step. When ready, stage only reviewed files, confirm `.env` is ignored (`git check-ignore .env`) and absent from staged changes, then commit and push approved changes to `main`.
+The current screenshot and documentation changes require builder review and authorization before committing or pushing. When ready, stage only reviewed files, confirm `.env` is ignored (`git check-ignore .env`) and absent from staged changes, then commit and push approved changes to `main`.
 
 On GitHub:
 
@@ -105,7 +109,7 @@ Submit the published Product Page and [repository URL](https://github.com/buildi
 - `app/`: browser interface.
 - `tests/test_server.py`: deterministic behavior and simulated provider tests.
 - `tests/test_uploads.py`: document extraction and HTTP upload-to-analysis checks.
-- `docs/index.html`, `docs/assets/prototype.png`: PRD, build log, actual screenshot.
+- `docs/index.html`, `docs/assets/prototype.png`, `docs/assets/ai-review.png`: PRD, build log, non-AI interface capture, and successful live AI review screenshot.
 - `AGENTS.md`, `Intent.md`, `Plan.md`: rules, intent, architecture and risks.
 
 API reference: [OpenRouter chat completions](https://openrouter.ai/docs/api/api-reference/chat/send-chat-completion-request).
